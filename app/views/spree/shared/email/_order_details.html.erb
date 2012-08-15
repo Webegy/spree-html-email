@@ -69,14 +69,29 @@
   <tbody id="order-charges" data-hook="order_details_adjustments">
     <% order.adjustments.eligible.each do |adjustment| %>
       <% next if (adjustment.originator_type == "TaxRate") and (adjustment.amount == 0) %>
-      <tr class="total">
-        <td class="title" colspan="3">
-          <%= adjustment.label %>
-        </td>
-        <td class="total number">
-          <%= number_to_currency adjustment.amount %>
-        </td>
-      </tr>
+        <% if adjustment.label[0,3] == "TPS" %>
+          <% 
+            tps = order.item_total * 0.05
+            tvq = (order.item_total * 1.05) * 0.095
+          %>
+          <tr class="total">
+            <td class="title" colspan="3"><%= t(:GST) %> : </td>
+            <td class="total number"><%= number_to_currency BigDecimal.new(tps.to_s).round(2, BigDecimal::ROUND_HALF_UP) %></td>
+          </tr>
+          <tr class="total">
+            <td class="title" colspan="3"><%= t(:QST) %> : </td>
+            <td class="total number"><%= number_to_currency BigDecimal.new(tvq.to_s).round(2, BigDecimal::ROUND_HALF_UP) %></td>
+          </tr>
+        <% else %>
+          <tr class="total">
+            <td class="title" colspan="3">
+              <%= adjustment.label %>
+            </td>
+            <td class="total number">
+              <%= number_to_currency adjustment.amount %>
+            </td>
+          </tr>
+        <% end %>
     <% end %>
   </tbody>
   <tbody id="order-total" data-hook="order_details_total">
