@@ -70,7 +70,7 @@
     <% order.adjustments.eligible.each do |adjustment| %>
       <% next if (adjustment.originator_type == "TaxRate") and (adjustment.amount == 0) %>
         <% if adjustment.label[0,3] == "TPS" %>
-          <% 
+          <%
             tps = order.item_total * 0.05
             tvq = (order.item_total * 1.05) * 0.095
           %>
@@ -105,6 +105,13 @@
     </tr>
   </tbody>
 </table>
+<% if Spree::Config[:shipment_inc_vat] %>
+  <p>
+    <small><i>
+      (<%= t(:shipping_tax_included) %>)
+    </i></small>
+  </p>
+<% end %>
 
 <% if Rails.application.railties.all.map(&:railtie_name).include? 'spree_digital' %>
 <% digital_items = @order.line_items.select{ |i| i.digital? } %>
