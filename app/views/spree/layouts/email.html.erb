@@ -1,7 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
   <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <style>
      <%= render :partial => 'spree/shared/email/stylesheet' %>
     </style>
@@ -12,7 +12,23 @@
         <%= render :partial => 'spree/shared/email/header' %>
       </header>
       <section id="main">
-        <%= yield %>
+        <% 
+            content = yield.gsub("é", "&#233;")
+            content = content.gsub("à", "&#224;")
+            content = content.gsub("â",	"&#226;")
+            content = content.gsub("ç", "&#231;")
+            content = content.gsub("è",	"&#232;")
+            content = content.gsub("ê",	"&#234;")
+            content = content.gsub("ë",	"&#235;")
+            content = content.gsub("î",	"&#238;")
+            content = content.gsub("ï",	"&#239;")
+            content = content.gsub("ô",	"&#244;")
+            content = content.gsub("ù",	"&#249;")
+            content = content.gsub("û",	"&#251;")
+            content = content.gsub("ü",	"&#252;")
+        %>
+        
+        <%= content.html_safe %>
       </section>
       <footer>
         <%= render :partial => 'spree/shared/email/footer' %>
