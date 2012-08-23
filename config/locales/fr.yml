@@ -1,0 +1,21 @@
+fr:
+  digital_email_description: "Chaque lien ne fonctionnequ'une seule fois! Ils ne fonctionneront seulement durant 24 heures."
+  
+  confirm_overview: "Veuillez conserver les informations de cette commande."
+  link: "Pour voir les détails de la commande, cliquez sur ce lien:"
+  order_summary: "Résumé de la commande"
+  thank_you: "Dame Nature vous remercie."
+  
+  cancel_overview: "Votre commande a été <b>annulée</b>. Veuillez conserver cette information."
+  cancel_order_summary: "Résumé de la commande [annulé]"
+  
+  shipment_overview: "Votre commande a été expédiée"
+  shipment_summary: "Résumé de la commande"
+  
+  password_overview: "Une demande de réinitialisation de mot de passe a été effectuée. Si vous n'avez pas effectué cette demande, veuillez ignorer cet email."
+  password_link: "Si vous avez effectué cette demande, veuillez cliquer sur le lien ci-dessous:"
+  password_footer: "Si l'URL ci-dessus ne fonctionne pas, essayez de le copier coller dans votre navigateur. Si vous avez un problème, n'hésitez pas à nous contacter."
+  
+  time:
+    formats:
+      short: "%B %d, %Y"

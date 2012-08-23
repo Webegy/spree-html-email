@@ -1,6 +1,21 @@
 en:
   digital_email_description: Each link will only work a SINGLE TIME! Also, they will only work WITHIN 24 HOURS!
-
+  
+  confirm_overview: "Please review and retain the following order information for your records."
+  link: "To view the complete details of your order use the following link:"
+  order_summary: "Order Summary"
+  thank_you: "Thank you for your business."
+  
+  cancel_overview: "Your order has been <b>CANCELED</b>.  Please retain this cancellation information for your records."
+  cancel_order_summary: "Order Summary [CANCELED]"
+  
+  shipment_overview: "Your shipment has been shipped"
+  shipment_summary: "Shipment Summary"
+  
+  password_overview: "A request to reset your password has been made. If you did not make this request, simply ignore this email."
+  password_link: "If you did make this request just click the link below:"
+  password_footer: "If the above URL does not work try copying and pasting it into your browser. If you continue to have problem please feel free to contact us."
+  
   time:
     formats:
       short: "%B %d, %Y"
