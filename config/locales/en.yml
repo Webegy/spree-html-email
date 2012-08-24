@@ -1,6 +1,9 @@
 en:
+  order_number: "Order number"
+  submitted: "Submitted"
   dear_customer: "Dear %{name},"
   digital_email_description: Each link will only work a SINGLE TIME! Also, they will only work WITHIN 24 HOURS!
+  items_purchased: "Items purchased"
   
   confirm_overview: "Please review and retain the following order information for your records."
   link: "To view the complete details of your order use the following link:"

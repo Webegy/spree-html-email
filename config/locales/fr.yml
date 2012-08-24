@@ -1,6 +1,9 @@
 fr:
+  order_number: "Numéro de commande"
+  submitted: "Date de commande"
   dear_customer: "Bonjour %{name},"
   digital_email_description: "Chaque lien ne fonctionnequ'une seule fois! Ils ne fonctionneront seulement durant 24 heures."
+  items_purchased: "Produits achetés"
   
   confirm_overview: "Veuillez conserver les informations de cette commande."
   link: "Pour voir les détails de la commande, cliquez sur ce lien:"
