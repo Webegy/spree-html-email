@@ -67,28 +67,33 @@
     </tr>
   </tbody>
   <tbody id="order-charges" data-hook="order_details_adjustments">
-    <% order.adjustments.eligible.each do |adjustment| %>
-      <% next if (adjustment.originator_type == "TaxRate") and (adjustment.amount == 0) %>
 
-        <% if adjustment.originator_type == 'Spree::TaxRate' %>
-          <tr class="total">
-            <td class="title" colspan="3">
-              <%= adjustment.originator.name %>
-              <%= (adjustment.originator.amount * 100).to_s + "%" if adjustment.originator.display_rate %>:
-            </td>
-            <td class="total number"><%= number_to_currency adjustment.amount %></td>
-          </tr>
-        <% else %>
-          <tr class="total">
-            <td class="title" colspan="3">
-              <%= adjustment.label %>
-            </td>
-            <td class="total number">
-              <%= number_to_currency adjustment.amount %>
-            </td>
-          </tr>
-        <% end %>
+    <% order.adjustments.eligible.tax.each do |adjustment| %>
+      <% next if (adjustment.amount == 0) %>
+      <tr class="total">
+        <td class="title" colspan="3">
+          <%= adjustment.originator.name %>
+          <%= (adjustment.originator.amount * 100).to_s + "%" if adjustment.originator.display_rate %>:
+
+        </td>
+        <td class="total number"><%= number_to_currency adjustment.amount %></td>
+      </tr>
     <% end %>
+
+    <% order.adjustments.eligible.not_shipping.not_tax.each do |adjustment| %>
+      <tr class="total">
+        <td class="title" colspan="3"><%= adjustment.label %>: </td>
+        <td class="total number"><%= number_to_currency adjustment.amount %></td>
+      </tr>
+    <% end %>
+
+    <% order.adjustments.eligible.shipping.each do |adjustment| %>
+      <tr class="total">
+        <td class="title" colspan="3"><%= adjustment.label %>: </td>
+        <td class="total number"><%= number_to_currency adjustment.amount %></td>
+      </tr>
+    <% end %>
+
   </tbody>
   <tbody id="order-total" data-hook="order_details_total">
     <tr class="total">
