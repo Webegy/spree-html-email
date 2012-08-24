@@ -1,4 +1,5 @@
 fr:
+  dear_customer: "Bonjour %{name},"
   digital_email_description: "Chaque lien ne fonctionnequ'une seule fois! Ils ne fonctionneront seulement durant 24 heures."
   
   confirm_overview: "Veuillez conserver les informations de cette commande."

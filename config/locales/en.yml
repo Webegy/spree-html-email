@@ -1,4 +1,5 @@
 en:
+  dear_customer: "Dear %{name},"
   digital_email_description: Each link will only work a SINGLE TIME! Also, they will only work WITHIN 24 HOURS!
   
   confirm_overview: "Please review and retain the following order information for your records."
