@@ -1,4 +1,5 @@
 en:
+  reset_password: "Resetting your password"
   order_number: "Order number"
   submitted: "Submitted"
   dear_customer: "Dear %{name},"
